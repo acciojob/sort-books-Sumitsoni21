@@ -19,19 +19,21 @@ const BookList = () => {
 
 
         <div className="body">
-            <h1 className="title">NYT BOOKS</h1>
+            <header><h1 className="title">Books List</h1></header>
+
 
             <div className="sort_container">
 
-
-                <select value={sortBy} onChange={(e) => { dispatch(setSortBy(e.target.value)) }}>
+                <label htmlFor="sort-by">Sort By : </label>
+                <select id="sort-by" value={sortBy} onChange={(e) => { dispatch(setSortBy(e.target.value)) }}>
                     <option value="title">Title</option>
                     <option value="author">Author</option>
                     <option value="publisher">Publisher</option>
 
                 </select>
 
-                <select value={sortOrder} onChange={(e) => { dispatch(setSortOrder(e.target.value)) }}>
+                <label htmlFor="order">Sort By : </label>
+                <select id="order" value={sortOrder} onChange={(e) => { dispatch(setSortOrder(e.target.value)) }}>
                     <option value="asc">Ascending</option>
                     <option value="desc">Descending</option>
 
@@ -47,13 +49,13 @@ const BookList = () => {
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>Auther</th>
+                            <th>Author</th>
                             <th>Publisher</th>
                             <th>Description</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {books.map(( book,index) => (<tr key={index}>
+                        {books.map((book, index) => (<tr key={index}>
                             <td>{book.title}</td>
                             <td>{book.author}</td>
                             <td>{book.publisher}</td>
