@@ -1,1 +1,43 @@
+.app {
+  height: 100vh;
+  width: 95vw;
+  margin: 0 auto;
+}
 
+.title {
+  text-align: center;
+}
+
+.sort_container {
+  display: flex;
+  justify-content: flex-end;
+  gap:20px;
+  padding: 20px 0;
+}
+
+select {
+  padding: 4px 40px;
+  background-color: gainsboro;
+}
+
+table,
+th,
+td {
+  border: 1px solid gray;
+  border-collapse: collapse;
+  padding: 4px 8px;
+}
+
+th {
+  font-size: large;
+  text-align: center;
+}
+
+td {
+  text-align: left;
+}
+
+tr:hover {
+  background-color: bisque;
+  color: dodgerblue;
+}
