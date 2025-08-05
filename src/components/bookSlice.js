@@ -10,10 +10,13 @@ const initialState = {
 };
 
 export const fetchBooks = createAsyncThunk("fetchbBooks", () => {
-  return axios.get(
+  const response = axios.get(
     "https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=u6UVZ3JeGrAictue53ZQjVtqlUEPdH3v"
-  ).then((res) => res.data.results.lists.flatMap(list => list.books));
 
+  );
+
+  const books = response.data.results.lists.flatMap(list => list.books);
+  return books.slice(0, 60);
 });
 
 

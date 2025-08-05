@@ -36,7 +36,6 @@ const BookList = () => {
                 <select id="order" value={sortOrder} onChange={(e) => { dispatch(setSortOrder(e.target.value)) }}>
                     <option value="asc">Ascending</option>
                     <option value="desc">Descending</option>
-
                 </select>
             </div>
 
