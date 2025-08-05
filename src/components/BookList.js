@@ -24,7 +24,7 @@ const BookList = () => {
 
             <div className="sort_container">
 
-                <label htmlFor="sort-by">Sort By : </label>
+                <label htmlFor="sort-by">Sort by:</label>
                 <select id="sort-by" value={sortBy} onChange={(e) => { dispatch(setSortBy(e.target.value)) }}>
                     <option value="title">Title</option>
                     <option value="author">Author</option>
@@ -32,7 +32,7 @@ const BookList = () => {
 
                 </select>
 
-                <label htmlFor="order">Sort By : </label>
+                <label htmlFor="order">Order:</label>
                 <select id="order" value={sortOrder} onChange={(e) => { dispatch(setSortOrder(e.target.value)) }}>
                     <option value="asc">Ascending</option>
                     <option value="desc">Descending</option>
@@ -51,7 +51,7 @@ const BookList = () => {
                             <th>Title</th>
                             <th>Author</th>
                             <th>Publisher</th>
-                            <th>Description</th>
+                            <th>ISBN</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,7 +59,10 @@ const BookList = () => {
                             <td>{book.title}</td>
                             <td>{book.author}</td>
                             <td>{book.publisher}</td>
-                            <td>{book.description}</td>
+                            {/* <td>{book.isbns} </td> */}
+                            <td> {book.isbns[0].isbn10
+                                ? `ISBN-10: ${book.isbns[0].isbn10}`
+                                : `ISBN-13: ${book.isbns[0].isbn13}`}</td>
                         </tr>))}
                     </tbody>
                 </table>)}
